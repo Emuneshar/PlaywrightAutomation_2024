@@ -1,0 +1,16 @@
+{
+  "name": "playwrightautomation_2024",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "pakora" : "npx playwright test /src/test/Day1_12162024/T1_GoogleSearch.spec.ts --headed --workers=1 --project=chromium --reporter=html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.49.1",
+    "@types/node": "^22.10.2"
+  }
+}
