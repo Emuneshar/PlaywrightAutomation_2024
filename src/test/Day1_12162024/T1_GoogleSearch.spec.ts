@@ -6,7 +6,7 @@ test.beforeAll(async ({ browser }) => {
    page = await browser.newPage()
 })//end of beforeAll
 
-test('Search for bmw on google', async () => {
+test('Search for bmw on google @smoke', async () => {
     await page.goto("https://www.google.com")
     await page.locator("xpath=//*[@name='q']").fill("bmw")
     await page.locator("xpath=//*[@name='btnK']").nth(0).click()
