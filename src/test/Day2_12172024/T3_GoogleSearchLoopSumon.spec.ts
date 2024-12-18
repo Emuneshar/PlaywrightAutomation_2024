@@ -16,7 +16,6 @@ test('Search for cars on google', async () => {
         await page.goto("https://www.google.com")
         await page.locator("xpath=//*[@name='q']").fill(cars[i])
         await page.locator("xpath=//*[@name='btnK']").nth(0).click()
-        await page.waitForTimeout(5000)
         //click on tools menu
         await page.locator("xpath=//*[@id='hdtb-tls']").click()
         let result = await page.locator("xpath=//*[@id='result-stats']").textContent()

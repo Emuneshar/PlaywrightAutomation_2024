@@ -1,7 +1,9 @@
-import {test, expect, Page} from '@playwright/test';
+import {test, expect, Page, BrowserContext} from '@playwright/test';
 
-let page: Page
+let page: Page;
+let context: BrowserContext;
 test.beforeAll(async ({browser}) => {
+    context = await browser.newContext()
     page = await browser.newPage()
 }) // end of before all
 
