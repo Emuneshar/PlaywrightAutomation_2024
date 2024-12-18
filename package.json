@@ -5,7 +5,7 @@
   "scripts": {
     "pakora" : "npx playwright test /src/test/Day1_12162024/T1_GoogleSearch.spec.ts --headed --workers=1 --project=chromium --reporter=html",
     "smokeSuite": "npx playwright test  --grep @smoke /src/test/* --headed --workers=1 --project=chromium --reporter=html",
-    "bingSearch": "npx playwright test /src/test/Day2_12172024/T1_BingSearch.spec.ts --headed --workers=1 --project=chromium --reporter=html",
+    "bingSearch": "npx playwright test /src/test/Day2_12172024/T1_BingSearch.spec.ts --headed --workers=1 --project=FireFox --reporter=html",
     "carSearch" : "npx playwright test /src/test/Day2_12172024/T2_GoogleSearchLoop.spec.ts --headed --workers=1 --project=chromium --reporter=html",
     "runAll" : "npx playwright test /src/test/* --headed --workers=1 --project=chromium --reporter=html"
   },
