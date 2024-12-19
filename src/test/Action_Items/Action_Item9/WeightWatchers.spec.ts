@@ -11,5 +11,7 @@ test.beforeAll(async ({browser}) => {
 test('Go to weight watchers site', async() => {
     await page.waitForTimeout(6000) // Added time to allow for the screen to maximize window
     await page.goto("https://www.weightwatchers.com")
-    await page.waitForTimeout(6000)
+    
+    
+    await page.waitForTimeout(6000) // slowed the script to see the results
 })
