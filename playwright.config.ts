@@ -27,12 +27,7 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     trace: 'on-first-retry',
-    actionTimeout: 12000,
-    deviceScaleFactor: undefined,
-    viewport: null,
-    launchOptions: {
-      args: ['--start-maximized'], // This will work correctly now
-    },
+    actionTimeout: 12000
      // Ensure Playwright uses full screen (system resolution)
   },
 
@@ -40,7 +35,15 @@ export default defineConfig({
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome']},
+      use: { ...devices['Desktop Chrome'], 
+        viewport:null, 
+        launchOptions: {
+          args: ['--start-maximixed',
+                '--window-size=${1920},${1080}'
+          ],
+        },
+        deviceScaleFactor: undefined,
+      },
       
     },
 
