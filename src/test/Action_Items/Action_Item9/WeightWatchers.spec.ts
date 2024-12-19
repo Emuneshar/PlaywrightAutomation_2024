@@ -44,7 +44,7 @@ test('Go to weight watchers site', async() => {
             await page.locator(xpathStudioLink).nth(0).click()
         }
 
-        
+        console.log("*+*+*+*+*+*+*+*++*+*++*+*+*+*++*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+**+*+*+*+*+")
         await page.waitForTimeout(2000)
     }
     
