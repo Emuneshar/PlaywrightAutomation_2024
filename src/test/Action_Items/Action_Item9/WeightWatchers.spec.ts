@@ -31,7 +31,7 @@ test('Go to weight watchers site', async() => {
     await page.locator(xpathLocationSearch).click() // click on location search
     await page.locator(xpathLocationSearch).clear() // clear zip code field
     await page.locator(xpathLocationSearch).fill("11001") // sent in zipcode mock data
-    await page.locator(xpathRightArrow).click()
+    await page.locator(xpathRightArrow).click() // click on continue button
     await page.waitForTimeout(2000)
 
     
