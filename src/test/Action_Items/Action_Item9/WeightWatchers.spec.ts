@@ -13,6 +13,7 @@ let xpathInPerson = "xpath=//*[text() = 'In-Person']"
 let xpathLocationSearch = "xpath=//*[@id = 'location-search']"
 let xpathRightArrow = "xpath=//*[@class = 'rightArrow-C_sUu']"
 let xpathStudioLink = "xpath=//*[@class = 'wrapperLink-rmsRn']"
+let xpathAddress = "xpath=//*[@class = 'address-FnT8k']"
 let zipCodes = Array<string>() // Create an array list of mock data
 
 // Added zipcodes to the list 
@@ -31,8 +32,9 @@ test('Go to weight watchers site', async() => {
         await page.locator(xpathInPerson).nth(0).click() // click on in person
         await page.locator(xpathLocationSearch).click() // click on location search
         await page.locator(xpathLocationSearch).clear() // clear zip code field
-        await page.locator(xpathLocationSearch).fill("11001") // sent in zipcode mock data
+        await page.locator(xpathLocationSearch).fill(zipCodes[i]) // sent in zipcode mock data
         await page.locator(xpathRightArrow).click() // click on continue button
+
 
         if(i === 0)( // if this is the first iteration, click on the second link
             await page.locator(xpathStudioLink).nth(1).click()
@@ -45,6 +47,9 @@ test('Go to weight watchers site', async() => {
         }
 
         console.log("*+*+*+*+*+*+*+*++*+*++*+*+*+*++*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+**+*+*+*+*+")
+        let address = await page.locator(xpathAddress).textContent()
+        console.log("Address " + (i+1) + " is: " + address)
+        
         await page.waitForTimeout(2000)
     }
     
