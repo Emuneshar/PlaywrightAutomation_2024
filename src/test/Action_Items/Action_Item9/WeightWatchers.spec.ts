@@ -1,7 +1,9 @@
-import {test, expect, Page} from '@playwright/test';
+import {test, expect, Page, chromium} from '@playwright/test';
 
 // declaring global variables
 let page: Page
+
+
 
 // Before all 
 test.beforeAll(async ({browser}) => {
