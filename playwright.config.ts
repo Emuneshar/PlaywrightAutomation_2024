@@ -28,7 +28,6 @@ export default defineConfig({
   use: {
     trace: 'on-first-retry',
     actionTimeout: 12000
-     // Ensure Playwright uses full screen (system resolution)
   },
 
   /* Configure projects for major browsers */
@@ -39,7 +38,7 @@ export default defineConfig({
         viewport:null, 
         launchOptions: {
           args: ['--start-maximixed',
-                //'--window-size=${1920},${1080}'
+                '--start-fullscreen'
           ],
         },
         deviceScaleFactor: undefined,

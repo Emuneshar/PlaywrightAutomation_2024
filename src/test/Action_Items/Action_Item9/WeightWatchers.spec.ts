@@ -17,6 +17,7 @@ const xpathRightArrow = "xpath=//*[@class = 'rightArrow-C_sUu']"
 const xpathStudioLink = "xpath=//*[@class = 'wrapperLink-rmsRn']"
 const xpathAddress = "xpath=//*[@class = 'address-FnT8k']"
 const xpathViewSchedule = "xpath=//*[@class = 'scheduleContainerMobile-ps6Rm']"
+
 let zipCodes = Array<string>() // Create an array list of mock data
 
 // Added zipcodes to the list 
@@ -37,6 +38,7 @@ test('Go to weight watchers site', async() => {
         await page.locator(xpathLocationSearch).clear() // clear zip code field
         await page.locator(xpathLocationSearch).fill(zipCodes[i]) // sent in zipcode mock data
         await page.locator(xpathRightArrow).click() // click on continue button
+        
 
 
         if(i === 0)( // if this is the first iteration, click on the second link
