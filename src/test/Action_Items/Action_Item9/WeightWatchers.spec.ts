@@ -26,13 +26,12 @@ zipCodes.push("11001")
 zipCodes.push("77010")
 
 
-test('Go to weight watchers site', async() => {
+test('Find Weight Watchers Workshop Near Zipcodes', async() => {
     await page.setViewportSize({width:1920, height:1080}) // attempted to mximize the screen
-    await page.waitForTimeout(6000) // Added time to allow for the screen to maximize window
+    
     
     for(let i = 0; i < zipCodes.length; i++){
         await page.goto(url) // Navigate to the weight watchers site
-        await page.waitForTimeout(2000) // slowed the automation to see the script run
         await page.locator(xpathInPerson).nth(0).click() // click on in person
         await page.locator(xpathLocationSearch).click() // click on location search
         await page.locator(xpathLocationSearch).clear() // clear zip code field
@@ -61,9 +60,5 @@ test('Go to weight watchers site', async() => {
         console.log(schedule) // prints out the schedule        
         
     }
-    
 
-    
-    
-    //await page.waitForTimeout(6000) // slowed the script to see the results
 })
