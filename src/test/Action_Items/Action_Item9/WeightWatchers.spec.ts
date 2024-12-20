@@ -8,12 +8,13 @@ test.beforeAll(async ({browser}) => {
     page = await browser.newPage()
 }) // end of before all
 
-let url = "https://www.weightwatchers.com/us/find-a-workshop"
-let xpathInPerson = "xpath=//*[text() = 'In-Person']"
-let xpathLocationSearch = "xpath=//*[@id = 'location-search']"
-let xpathRightArrow = "xpath=//*[@class = 'rightArrow-C_sUu']"
-let xpathStudioLink = "xpath=//*[@class = 'wrapperLink-rmsRn']"
-let xpathAddress = "xpath=//*[@class = 'address-FnT8k']"
+const url = "https://www.weightwatchers.com/us/find-a-workshop"
+const xpathInPerson = "xpath=//*[text() = 'In-Person']"
+const xpathLocationSearch = "xpath=//*[@id = 'location-search']"
+const xpathRightArrow = "xpath=//*[@class = 'rightArrow-C_sUu']"
+const xpathStudioLink = "xpath=//*[@class = 'wrapperLink-rmsRn']"
+const xpathAddress = "xpath=//*[@class = 'address-FnT8k']"
+const xpathViewSchedule = "xpath=//*[@class = 'scheduleContainerMobile-ps6Rm']"
 let zipCodes = Array<string>() // Create an array list of mock data
 
 // Added zipcodes to the list 
@@ -46,11 +47,15 @@ test('Go to weight watchers site', async() => {
             await page.locator(xpathStudioLink).nth(0).click()
         }
 
+        // Added a print to separate the different outputs 
+        console.log("\n") // skips a line
         console.log("*+*+*+*+*+*+*+*++*+*++*+*+*+*++*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+**+*+*+*+*+")
-        let address = await page.locator(xpathAddress).textContent()
-        console.log("Address " + (i+1) + " is: " + address)
+        let address = await page.locator(xpathAddress).textContent() // gets the address info from the site
+        console.log("Address " + (i+1) + " is: " + address) // prints out the address we saved
+        await page.locator(xpathViewSchedule).scrollIntoViewIfNeeded() // scrolls down to the element that stores the dates
+        let schedule = await page.locator(xpathViewSchedule).textContent() // gets the availability schedule
+        console.log(schedule) // prints out the schedule        
         
-        await page.waitForTimeout(2000)
     }
     
 
