@@ -26,7 +26,7 @@ zipCodes.push("77010")
 
 
 test('Go to weight watchers site', async() => {
-    await page.setViewportSize({width:1920, height:1032}) // attempted to mximize the screen
+    await page.setViewportSize({width:1920, height:1080}) // attempted to mximize the screen
     await page.waitForTimeout(6000) // Added time to allow for the screen to maximize window
     
     for(let i = 0; i < zipCodes.length; i++){

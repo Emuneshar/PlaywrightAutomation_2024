@@ -39,7 +39,7 @@ export default defineConfig({
         viewport:null, 
         launchOptions: {
           args: ['--start-maximixed',
-                '--window-size=${1920},${1080}'
+                //'--window-size=${1920},${1080}'
           ],
         },
         deviceScaleFactor: undefined,
