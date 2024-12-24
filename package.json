@@ -8,7 +8,8 @@
     "bingSearch": "npx playwright test /src/test/Day2_12172024/T1_BingSearch.spec.ts --headed --workers=1 --project=FireFox --reporter=html",
     "carSearch" : "npx playwright test /src/test/Day2_12172024/T2_GoogleSearchLoop.spec.ts --headed --workers=1 --project=chromium --reporter=html",
     "runAll" : "npx playwright test /src/test/* --headed --workers=1 --project=chromium --reporter=html",
-    "ActionItem9" : "npx playwright test /src/test/Action_Items/Action_Item9/WeightWatchers.spec.ts --headed --workers=1 --project=FireFox --reporter=html"
+    "ActionItem9" : "npx playwright test /src/test/Action_Items/Action_Item9/WeightWatchers.spec.ts --headed --workers=1 --project=FireFox --reporter=html",
+    "bingSearchReusable": "npx playwright test /src/test/Day3_12232024/Bing_ReusableMethod.spec.ts --headed --workers=1 --project=chromium --reporter=html"
   },
   "keywords": [],
   "author": "",
