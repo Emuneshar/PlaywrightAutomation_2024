@@ -19,6 +19,10 @@ export async function captureText(page: Page, xpath: string, elementName: string
 }
 
 export async function sendKeys(page : Page, xpath: string, text: string, elementName: string){
-    console.log("Sneding keys to " + elementName)
+    console.log("Sending keys to " + elementName)
     await page.locator("xpath=" + xpath).fill(text)
+}
+
+export async function mouseHover(page: Page, xpath: string, elementName: string){
+
 }
