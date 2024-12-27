@@ -7,9 +7,10 @@ test.beforeAll(async ({browser}) => {
 }) // End of before all
 
 const url = "https://www.usps.com/"
-const xpathShop = "//*[@class = 'menuitem']"
+const xpathShop = "xpath=//*[@href = 'https://store.usps.com/store']"
 
 test("Capture Stamp information under the item section", async () =>{
     await page.goto(url)
-    await mouseHoverNth(page, xpathShop, 3, "Shop")
+    await mouseHover(page, xpathShop, "Shop")
+    //await mouseHoverNth(page, xpathShop, 3, "Shop")
 })
