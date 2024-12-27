@@ -32,3 +32,8 @@ export async function mouseHoverNth(page: Page, xpath: string, index: number, el
     console.log("Hover over " +  elementName)
     await page.locator("xpath="+xpath).nth(index).hover()
 }
+
+export async function scrollByPixel(page: Page, pixelX: number, pixelY: number, elementName: string){
+    console.log("Scrolling to "+ elementName)
+    await page.mouse.wheel(pixelX, pixelY )
+}
