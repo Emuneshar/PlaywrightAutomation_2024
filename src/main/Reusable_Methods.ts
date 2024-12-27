@@ -24,5 +24,6 @@ export async function sendKeys(page : Page, xpath: string, text: string, element
 }
 
 export async function mouseHover(page: Page, xpath: string, elementName: string){
-
+    console.log("Hovering over " + elementName)
+    await page.locator("xpath=" + xpath).hover()
 }
