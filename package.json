@@ -10,7 +10,7 @@
     "runAll" : "npx playwright test /src/test/* --headed --workers=1 --project=chromium --reporter=html",
     "ActionItem9" : "npx playwright test /src/test/Action_Items/Action_Item9/WeightWatchers.spec.ts --headed --workers=1 --project=FireFox --reporter=html",
     "bingSearchReusable": "npx playwright test /src/test/Day3_12232024/Bing_ReusableMethod.spec.ts --headed --workers=1 --project=chromium --reporter=html",
-    "ActionItem10": "npx playwright test /src/test/Action_Items/Action_Item10/USPS_ActionItem.spec.ts --headed --workers=1 --project=chromium --reporter=html"
+    "ActionItem10": "npx playwright test /src/test/Action_Items/Action_Item10/UseCase_NorthWesternMutual.spec --headed --workers=1 --project=chromium --reporter=html"
   },
   "keywords": [],
   "author": "",

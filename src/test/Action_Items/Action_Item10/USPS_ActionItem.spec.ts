@@ -20,7 +20,6 @@ const xpathInfo = "//*[@class = 'prod-info-detail']"
 
 test("Capture Stamp information under the item section", async () =>{
     await page.goto(url)
-    await page.waitForTimeout(2000)
     let result = await page.locator(xpathShop).all()
     await mouseHoverNth(page, xpathShop, 2, "Shop")
     await clickByIndex(page, xpathStamps, 1,  "Stamps")
@@ -32,7 +31,6 @@ test("Capture Stamp information under the item section", async () =>{
     await click(page, xpathViewCart, "View Cart")
     await sendKeys(page, xpathQuantity, "2", "Quantity")
     await click(page, xpathUpdate, "Update")
-    await page.waitForTimeout(2000)
     let text = await captureText(page,xpathInfo, "Info")
     let trimmedText = text.trim()
     console.log(trimmedText)
