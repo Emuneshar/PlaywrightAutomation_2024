@@ -27,3 +27,8 @@ export async function mouseHover(page: Page, xpath: string, elementName: string)
     console.log("Hovering over " + elementName)
     await page.locator("xpath=" + xpath).hover()
 }
+
+export async function mouseHoverNth(page: Page, xpath: string, index: number, elementName: string){
+    console.log("Hover over " + index + " element " + elementName)
+    await page.locator("xpath="+xpath).nth(index).hover()
+}
