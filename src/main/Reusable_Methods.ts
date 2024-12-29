@@ -23,16 +23,20 @@ export async function sendKeys(page : Page, xpath: string, text: string, element
     await page.locator("xpath=" + xpath).fill(text)
 }
 
+
+// New Mouse Hover function
 export async function mouseHover(page: Page, xpath: string, elementName: string){
     console.log("Hovering over " + elementName)
     await page.locator("xpath=" + xpath).hover()
 }
 
+// New Mouse Hover nth function
 export async function mouseHoverNth(page: Page, xpath: string, index: number, elementName: string){
     console.log("Hover over " +  elementName)
     await page.locator("xpath="+xpath).nth(index).hover()
 }
 
+// New Scroll By Pixel function
 export async function scrollByPixel(page: Page, pixelX: number, pixelY: number, elementName: string){
     console.log("Scrolling to "+ elementName)
     await page.mouse.wheel(pixelX, pixelY )
