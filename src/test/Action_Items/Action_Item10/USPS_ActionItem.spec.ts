@@ -18,7 +18,7 @@ const xpathUpdate = "//*[@id = 'atg_store_update']"
 const xpathInfo = "//*[@class = 'prod-info-detail']"
 
 
-test("Capture Stamp information under the item section", async () =>{
+test("Capture Stamp information under the item section @ai", async () =>{
     await page.goto(url)
     let result = await page.locator(xpathShop).all()
     await mouseHoverNth(page, xpathShop, 2, "Shop")
