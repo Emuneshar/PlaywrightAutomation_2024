@@ -20,6 +20,9 @@ jobs:
     
     - name: Run Bing Search Test
       run: npm run bingSearchCicd
+
+    - name: Run car search
+      run: npm run carSearchCiCd
     
     
     - uses: actions/upload-artifact@v4
