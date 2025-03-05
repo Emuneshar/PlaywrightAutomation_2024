@@ -12,7 +12,7 @@
     "bingSearchReusable": "npx playwright test /src/test/Day3_12232024/Bing_ReusableMethod.spec.ts --headed --workers=1 --project=chromium --reporter=html",
     "ActionItem10": "npx playwright test --grep @ai /src/test/Action_Items/Action_Item10/* --headed --workers=2 --project=chromium --reporter=html",
     "googleSearchPOM": "npx playwright test /src/test/GoogleTest_POM/Google_Search_Result.spec.ts --headed --workers=1 --project=chromium --reporter=html",
-    "bingSearchCicd": "npx playwright test /src/test/Day3_12232024/Bing_ReusableMethod.spec.ts --workers=1 --project=chromium --reporter=html",
+    "bingSearchCicd": "npx playwright test /src/test/Day3_12232024/Bing_ReusableMethod.spec.ts --workers=1 --project=chromium --reporter=html"
     
   },
   "keywords": [],
