@@ -20,20 +20,20 @@ const xpathQuantity = "//*[@class = 'col-8 form-control']"
 const xpathUpdate = "//*[@id = 'atg_store_update']"
 const xpathInfo = "//*[@class = 'prod-info-detail']"
 
-
+// Start of test
 test("Capture Stamp information under the item section @ai", async () =>{
-    await page.goto(url)
-    await mouseHoverNth(page, xpathShop, 2, "Shop") 
-    await clickByIndex(page, xpathStamps, 1,  "Stamps") 
-    await clickByIndex(page, xpathStampButton, 0,"Stamp Button")
-    await clickByIndex(page, xpathStampButton, 4, "Additional Postage")
-    await scrollByPixel(page, 0, 400, "Scrolling") 
-    await clickByIndex(page, xpathFirstStamp, 0, "First Stamp")
-    await click(page, xpathAddToCart, "Add to Cart") 
-    await click(page, xpathViewCart, "View Cart") 
-    await sendKeys(page, xpathQuantity, "2", "Quantity")
-    await click(page, xpathUpdate, "Update") 
-    let text = await captureText(page,xpathInfo, "Info")
-    let trimmedText = text.trim() 
-    console.log(trimmedText) 
-}) 
+    await page.goto(url) // Navigates to the USPS Site
+    await mouseHoverNth(page, xpathShop, 2, "Shop") // Hover over the shop menu item
+    await clickByIndex(page, xpathStamps, 1,  "Stamps") // Click on the Stamps item 
+    await clickByIndex(page, xpathStampButton, 0,"Stamp Button") // Click on the stamp button
+    await clickByIndex(page, xpathStampButton, 4, "Additional Postage") // Clicks on additional postage
+    await scrollByPixel(page, 0, 400, "Scrolling") // Scrolling by pixels down to the first stamp result
+    await clickByIndex(page, xpathFirstStamp, 0, "First Stamp") // Clicks on the first stamp
+    await click(page, xpathAddToCart, "Add to Cart") // Click on add to cart
+    await click(page, xpathViewCart, "View Cart") // Click on view cart
+    await sendKeys(page, xpathQuantity, "2", "Quantity") // Sends 2 to the quantity area
+    await click(page, xpathUpdate, "Update") // clicks on the update button to calculate the new total
+    let text = await captureText(page,xpathInfo, "Info") // Gets the info about the selected stamp
+    let trimmedText = text.trim() // Attempted to clean up the result from the stamp info due to excessive blank space. Works only for the first line. I suspect its due to each info line being in their own p tag
+    console.log(trimmedText) // Prints out the semi-cleaned up text
+}) // End of test
