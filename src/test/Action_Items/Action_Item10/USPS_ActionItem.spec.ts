@@ -36,4 +36,5 @@ test("Capture Stamp information under the item section @ai", async () =>{
     let text = await captureText(page,xpathInfo, "Info") // Gets the info about the selected stamp
     let trimmedText = text.trim() // Attempted to clean up the result from the stamp info due to excessive blank space. Works only for the first line. I suspect its due to each info line being in their own p tag
     console.log(trimmedText) // Prints out the semi-cleaned up text
-}) // End of test
+}) 
+// End of test
